@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/back-end-java.iml" filepath="$PROJECT_DIR$/back-end-java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/task-management-application/task-management-application.iml" filepath="$PROJECT_DIR$/task-management-application/task-management-application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/task-management-common/task-management-common.iml" filepath="$PROJECT_DIR$/task-management-common/task-management-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/task-management-controller/task-management-controller.iml" filepath="$PROJECT_DIR$/task-management-controller/task-management-controller.iml" />
+      <module fileurl="file://$PROJECT_DIR$/task-management-persistence/task-management-persistence.iml" filepath="$PROJECT_DIR$/task-management-persistence/task-management-persistence.iml" />
+      <module fileurl="file://$PROJECT_DIR$/task-management-service/task-management-service.iml" filepath="$PROJECT_DIR$/task-management-service/task-management-service.iml" />
+    </modules>
+  </component>
+</project>
