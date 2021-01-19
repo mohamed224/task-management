@@ -67,7 +67,6 @@
           <element id="library" level="project" name="Maven: org.springframework.security:spring-security-config:5.4.2" />
           <element id="library" level="project" name="Maven: org.springframework.security:spring-security-web:5.4.2" />
           <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.3.2" />
-          <element id="library" level="project" name="Maven: org.flywaydb:flyway-core:7.1.1" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.22" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.30" />
           <element id="library" level="project" name="Maven: jakarta.xml.bind:jakarta.xml.bind-api:2.3.3" />

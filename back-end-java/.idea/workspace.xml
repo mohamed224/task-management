@@ -1,12 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="77ddda51-9d60-4fbb-9038-bccda5e4e30b" name="Default Changelist" comment="" />
+    <list default="true" id="77ddda51-9d60-4fbb-9038-bccda5e4e30b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/task-management.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/7/070cf5178dcdcb31b1da9d1d3e993b8f4065864b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/a/2aa1b369afc7ccf1792753edca55438993342f47" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/0/808debd9c53f9df6952fe67022b78f5c3cf21b56" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/9/a90965fd85bbb2b94e32cc5678f259b332b3fd72" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/b/db668f35aaef54b27f40ab242a47cf717abfadb8" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/task-management-common/src/main/java/com/owntech/taskmanagement/converter/LocalDateTimeConverterAttribute.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/task-management-common/src/main/java/com/owntech/taskmanagement/converter/PriorityConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/task-management-common/src/main/java/com/owntech/taskmanagement/converter/StatusConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/task-management-common/src/main/java/com/owntech/taskmanagement/enums/Priority.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/task-management-common/src/main/java/com/owntech/taskmanagement/enums/Status.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/task-management-controller/src/main/java/com/owntech/taskmanagement/controller/CategoryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/task-management-controller/src/main/java/com/owntech/taskmanagement/controller/RoleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/task-management-controller/src/main/java/com/owntech/taskmanagement/controller/TaskController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/task-management-controller/src/main/java/com/owntech/taskmanagement/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/task-management-persistence/src/main/java/com/owntech/taskmanagement/audit/AuditConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/task-management-persistence/src/main/java/com/owntech/taskmanagement/audit/Auditable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/task-management-persistence/src/main/java/com/owntech/taskmanagement/audit/AuditorAwareImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/task-management-persistence/src/main/java/com/owntech/taskmanagement/dao/BaseDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/task-management-persistence/src/main/java/com/owntech/taskmanagement/dao/CategoryDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/task-management-persistence/src/main/java/com/owntech/taskmanagement/dao/PermissionDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/task-management-persistence/src/main/java/com/owntech/taskmanagement/dao/RoleDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/task-management-persistence/src/main/java/com/owntech/taskmanagement/dao/TaskDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/task-management-persistence/src/main/java/com/owntech/taskmanagement/dao/UserDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/task-management-persistence/src/main/java/com/owntech/taskmanagement/dto/CategoryDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/task-management-persistence/src/main/java/com/owntech/taskmanagement/dto/UserDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/task-management-persistence/src/main/java/com/owntech/taskmanagement/entities/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/task-management-persistence/src/main/java/com/owntech/taskmanagement/entities/Permission.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/task-management-persistence/src/main/java/com/owntech/taskmanagement/entities/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/task-management-persistence/src/main/java/com/owntech/taskmanagement/entities/Task.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/task-management-persistence/src/main/java/com/owntech/taskmanagement/entities/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/task-management-service/src/main/java/com/owntech/taskmanagement/service/ICategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/task-management-service/src/main/java/com/owntech/taskmanagement/service/IGenericService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/task-management-service/src/main/java/com/owntech/taskmanagement/service/IPermissionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/task-management-service/src/main/java/com/owntech/taskmanagement/service/IRoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/task-management-service/src/main/java/com/owntech/taskmanagement/service/ITaskService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/task-management-service/src/main/java/com/owntech/taskmanagement/service/IUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/task-management-service/src/main/java/com/owntech/taskmanagement/service/impl/CategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/task-management-service/src/main/java/com/owntech/taskmanagement/service/impl/GenericService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/task-management-service/src/main/java/com/owntech/taskmanagement/service/impl/PermissionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/task-management-service/src/main/java/com/owntech/taskmanagement/service/impl/RoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/task-management-service/src/main/java/com/owntech/taskmanagement/service/impl/TaskService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/task-management-service/src/main/java/com/owntech/taskmanagement/service/impl/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/task_management_application_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/task_management_application_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_flywaydb_flyway_core_7_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/d/2db9a10b6d63c4aaa1f351455a11f2ac3cb087bb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/4/b4ed66f9133c38bb14f1cd4caa9c453f914f494c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-management-application/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/task-management-application/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-management-application/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/task-management-application/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-management-application/src/main/java/com/owntech/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/task-management-application/src/main/java/com/owntech/taskmanagement/MainApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-management-application/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/task-management-application/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-management-application/src/test/java/com/owntech/taskmanagement/MainApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/task-management-application/src/test/java/com/owntech/taskmanagement/MainApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-management-common/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/task-management-common/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-management-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/task-management-common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-management-common/src/test/java/com/owntech/taskmanagement/TaskManagementCommonApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/task-management-common/src/test/java/com/owntech/taskmanagement/TaskManagementCommonApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-management-controller/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/task-management-controller/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-management-controller/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/task-management-controller/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-management-controller/src/test/java/com/owntech/taskmanagement/TaskManagementControllerApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/task-management-controller/src/test/java/com/owntech/taskmanagement/TaskManagementControllerApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-management-persistence/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/task-management-persistence/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-management-persistence/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/task-management-persistence/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-management-persistence/src/test/java/com/owntech/taskmanagement/TaskManagementPersistenceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/task-management-persistence/src/test/java/com/owntech/taskmanagement/TaskManagementPersistenceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-management-service/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/task-management-service/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-management-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/task-management-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-management-service/src/test/java/com/owntech/taskmanagement/TaskManagementServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/task-management-service/src/test/java/com/owntech/taskmanagement/TaskManagementServiceApplicationTests.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="taskDB@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="taskDB@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="taskDB@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="taskdb: schema" type="ebfa3cd1:MariaImplModel$Schema" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -16,21 +129,38 @@
     </option>
   </component>
   <component name="ProjectId" id="1myzk3kZpDbzT2mFC7xdFdV0Xaa" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/task-management-application/src/main/java/com/owntech" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.owntech.taskmanagement" />
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\SpringBoot Angular Project\task-management\back-end-java\task-management-persistence\src\main\java\com\owntech\taskmanagement" />
+    </key>
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn clean:clean" />
-      <command value="mvn clean" />
       <command value="mvn build" />
+      <command value="mvn compile" />
+      <command value="mvn clean" />
     </option>
   </component>
   <component name="RunDashboard">
@@ -107,7 +237,8 @@
     </configuration>
     <configuration name="MainApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="task-management-application" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.owntech.MainApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.owntech.taskmanagement.MainApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -147,10 +278,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Spring Boot.Application" />
+      <item itemvalue="Spring Boot.MainApplication" />
+      <item itemvalue="Spring Boot.TaskManagementApplication" />
+      <item itemvalue="Spring Boot.TaskManagementCommonApplication" />
+      <item itemvalue="Spring Boot.TaskManagementControllerApplication" />
+      <item itemvalue="Spring Boot.TaskManagementPersistanceApplication" />
+      <item itemvalue="Spring Boot.TaskManagementServiceApplication" />
+    </list>
   </component>
   <component name="ServiceViewManager">
     <option name="allServicesViewState">
       <serviceView>
+        <option name="contentProportion" value="0.17532468" />
         <treeState>
           <expand />
           <select />
@@ -170,11 +311,32 @@
       <updated>1610480758765</updated>
       <workItem from="1610480762482" duration="401000" />
       <workItem from="1610481248276" duration="3667000" />
-      <workItem from="1610485057877" duration="645000" />
+      <workItem from="1610485057877" duration="2373000" />
+      <workItem from="1610526027818" duration="26000" />
+      <workItem from="1610559438892" duration="5889000" />
+      <workItem from="1610635827260" duration="12805000" />
+      <workItem from="1610665592834" duration="621000" />
+      <workItem from="1610705620402" duration="16312000" />
+      <workItem from="1610803308865" duration="4185000" />
+      <workItem from="1610959167663" duration="42000" />
+      <workItem from="1610995257413" duration="3160000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
