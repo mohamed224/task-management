@@ -10,7 +10,7 @@ public interface ITaskService {
 
     Task getTaskById(Long id);
 
-    Task saveCategory(Task task);
+    Task saveTask(Task task);
 
     Task updateTask(Task task, Long taskId);
 

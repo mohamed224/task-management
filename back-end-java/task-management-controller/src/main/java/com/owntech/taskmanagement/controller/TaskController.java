@@ -20,7 +20,7 @@ public class TaskController {
 
     @PostMapping
     public Task saveTask(@RequestBody Task task) {
-        return taskService.saveCategory(task);
+        return taskService.saveTask(task);
     }
 
     @GetMapping

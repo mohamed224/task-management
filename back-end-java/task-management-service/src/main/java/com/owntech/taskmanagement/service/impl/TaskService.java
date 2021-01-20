@@ -39,8 +39,8 @@ public class TaskService extends GenericService<Task, Long> implements ITaskServ
     }
 
     @Override
-    public Task saveCategory(Task task) {
-        return taskDao.saveAndFlush(task);
+    public Task saveTask(Task task) {
+        return taskDao.save(task);
     }
 
     @Override

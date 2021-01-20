@@ -85,3 +85,11 @@ btask-management-controller/src/main/java/com/owntech/taskmanagement/controller/
 ftask-management-controller/src/main/java/com/owntech/taskmanagement/controller/CategoryController.java,6\3\63d184899ae7432dd8f7bb8234723b322e49d99e
 °
 qtask-management-controller/src/test/java/com/owntech/taskmanagement/TaskManagementControllerApplicationTests.java,1\5\150b10da033a812b536630750f4cbed66d905d24
+R
+"task-management-service/.gitignore,7\c\7c8067389a3431c56d62013cd8f66edd45bf3c55
+õ
+ktask-management-service/src/test/java/com/owntech/taskmanagement/TaskManagementServiceApplicationTests.java,1\3\13c3d8acb471271878fc9a6be41d0afb91c09419
+é
+^task-management-application/src/test/java/com/owntech/taskmanagement/MainApplicationTests.java,8\1\81aa544342553698f128ce2530d3d94e650d4d84
+ç
+]task-management-service/src/test/java/com/owntech/taskmanagement/service/TaskServiceTest.java,1\1\11942b3ad2bead41107117e9a2ec0d7c50ff3ccd

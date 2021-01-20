@@ -9,9 +9,9 @@
         <outputRelativeToContentRoot value="true" />
         <module name="task-management-service" />
         <module name="task-management-common" />
-        <module name="task-management-controller" />
         <module name="task-management-application" />
         <module name="task-management-persistence" />
+        <module name="task-management-controller" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
