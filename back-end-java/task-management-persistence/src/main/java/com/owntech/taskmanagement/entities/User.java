@@ -19,7 +19,7 @@ import java.util.Set;
 @NoArgsConstructor
 @ToString(exclude = {"isDeleted"})
 @EntityListeners(AuditingEntityListener.class)
-public class User extends Auditable<String> implements UserDetails, Serializable {
+public class User extends Auditable<String> implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -42,22 +42,7 @@ public class User extends Auditable<String> implements UserDetails, Serializable
     @Column(name = "USR_PASSWORD")
     private String password;
 
-    @Column(name = "USR_ENABLED")
-    private boolean enabled;
-
-    @Column(name = "USR_ACCOUNT_NON_LOCKED")
-    private boolean accountNonLocked;
-
-    @Column(name = "USR_ACCOUNT_NON_EXPIRED")
-    private boolean accountNonExpired;
-
-    @Column(name = "USR_CREDENTIALS_NON_EXPIRED")
-    private boolean credentialsNonExpired;
-
-    @Transient
-    private Collection<? extends GrantedAuthority> authorities;
-
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "TJ_USR_ROLE", joinColumns = {
             @JoinColumn(name = "USR_ID", referencedColumnName = "USR_ID")},
             inverseJoinColumns = {@JoinColumn(name = "ROL_ID", referencedColumnName = "ROL_ID")

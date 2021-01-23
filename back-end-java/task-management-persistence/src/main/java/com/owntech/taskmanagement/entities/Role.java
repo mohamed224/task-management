@@ -29,7 +29,7 @@ public class Role extends Auditable<String> implements Serializable {
     @Column(name = "ROL_DESCRIPTION")
     private String description;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "TJ_ROL_PERMISSION", joinColumns = {
             @JoinColumn(name = "ROL_ID", referencedColumnName = "ROL_ID")
     }, inverseJoinColumns = {@JoinColumn(name = "PER_ID", referencedColumnName = "PER_ID")})

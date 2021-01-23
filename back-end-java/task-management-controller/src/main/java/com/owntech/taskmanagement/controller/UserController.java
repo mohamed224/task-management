@@ -2,7 +2,15 @@ package com.owntech.taskmanagement.controller;
 
 import com.owntech.taskmanagement.entities.User;
 import com.owntech.taskmanagement.service.IUserService;
+import com.owntech.taskmanagement.service.impl.JwtTokenUtil;
+import com.owntech.taskmanagement.service.impl.JwtUserDetailsService;
+import com.owntech.taskmanagement.util.AuthenticationRequest;
+import com.owntech.taskmanagement.util.AuthenticationResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,10 +20,29 @@ import java.util.List;
 public class UserController {
 
     private IUserService userService;
+    private AuthenticationManager authenticationManager;
+    private JwtUserDetailsService jwtUserDetailsService;
+    private JwtTokenUtil jwtTokenUtil;
 
     @Autowired
-    public UserController(IUserService userService) {
+    public UserController(IUserService userService, AuthenticationManager authenticationManager, JwtUserDetailsService jwtUserDetailsService, JwtTokenUtil jwtTokenUtil) {
         this.userService = userService;
+        this.authenticationManager = authenticationManager;
+        this.jwtUserDetailsService = jwtUserDetailsService;
+        this.jwtTokenUtil = jwtTokenUtil;
+    }
+
+    @PostMapping("/login")
+    public AuthenticationResponse login(@RequestBody AuthenticationRequest authenticationRequest) throws Exception {
+        try {
+            authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authenticationRequest.getUsername(), authenticationRequest.getPassword()));
+        } catch (BadCredentialsException e) {
+            throw new Exception(e.getMessage());
+        }
+
+        final UserDetails userDetails = jwtUserDetailsService.loadUserByUsername(authenticationRequest.getUsername());
+        final String jwt = jwtTokenUtil.generateToken(userDetails);
+        return new AuthenticationResponse(jwt);
     }
 
     @PostMapping
