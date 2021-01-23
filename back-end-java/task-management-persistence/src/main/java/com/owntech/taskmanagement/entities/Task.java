@@ -52,8 +52,7 @@ public class Task extends Auditable<String> implements Serializable {
     @Column(name = "TSK_IS_DELETED", columnDefinition = "bit default 0")
     private boolean isDeleted;
 
-    public Task(String title , String description , Status status){
-
+    public Task(String title, String description, Status status) {
         this.title = title;
         this.description = description;
         this.status = status;

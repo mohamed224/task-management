@@ -21,10 +21,10 @@ import java.io.IOException;
 @Slf4j
 public class JwtRequestFilter extends OncePerRequestFilter {
 
-    private JwtTokenUtil jwtTokenUtil;
-    private JwtUserDetailsService jwtUserDetailsService;
     private static final String AUTHORIZATION = "authorization";
     private static final String BEARER = "Bearer ";
+    private JwtTokenUtil jwtTokenUtil;
+    private JwtUserDetailsService jwtUserDetailsService;
 
 
     @Autowired

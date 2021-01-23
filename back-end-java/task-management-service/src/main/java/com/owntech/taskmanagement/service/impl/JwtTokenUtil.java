@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
 public class JwtTokenUtil {
 
     private static final String SECRET_KEY = "jwtSecretKey";
-    private static final long EXPIRATION_DATE = 8640000;
+    private static final long EXPIRATION_DATE = 1801;
     private static final String AUTHORITIES = "authorities";
     private static final String SUBJECT = "sub";
     private static final String EXPIRATION = "exp";
@@ -52,9 +52,9 @@ public class JwtTokenUtil {
         Map<String, Object> claims = new HashMap<>();
         List<String> authorities = userDetails.getAuthorities().stream().map(GrantedAuthority::getAuthority).collect(Collectors.toList());
         claims.put(AUTHORITIES, authorities);
-        claims.put(SUBJECT,userDetails.getUsername());
-        claims.put(EXPIRATION,generateExpirationDate());
-        claims.put(ISSUED_AT,new Date(System.currentTimeMillis()));
+        claims.put(SUBJECT, userDetails.getUsername());
+        claims.put(EXPIRATION, generateExpirationDate());
+        claims.put(ISSUED_AT, new Date(System.currentTimeMillis()));
         log.info("username: {} ", userDetails.getUsername());
         return createToken(claims);
     }

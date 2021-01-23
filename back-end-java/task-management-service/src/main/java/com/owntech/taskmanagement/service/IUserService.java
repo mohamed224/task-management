@@ -1,18 +1,18 @@
 package com.owntech.taskmanagement.service;
 
-import com.owntech.taskmanagement.entities.User;
+import com.owntech.taskmanagement.dto.UserDto;
 
 import java.util.List;
 
 public interface IUserService {
 
-    List<User> getUsers();
+    List<UserDto> getUsers();
 
-    User getUserById(Long id);
+    UserDto getUserById(Long id);
 
-    User saveUser(User user);
+    UserDto saveUser(UserDto userDto);
 
-    User updateUser(User user, Long userId);
+    UserDto updateUser(UserDto userDto, Long userId);
 
     void deleteUser(Long id);
 

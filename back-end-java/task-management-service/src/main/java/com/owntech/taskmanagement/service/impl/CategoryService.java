@@ -1,6 +1,8 @@
 package com.owntech.taskmanagement.service.impl;
 
+import com.owntech.taskmanagement.converter.CategoryConverter;
 import com.owntech.taskmanagement.dao.CategoryDao;
+import com.owntech.taskmanagement.dto.CategoryDto;
 import com.owntech.taskmanagement.entities.Category;
 import com.owntech.taskmanagement.service.ICategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,28 +21,28 @@ public class CategoryService extends GenericService<Category, Long> implements I
     }
 
     @Override
-    public List<Category> getCategories() {
-        return categoryDao.findAll();
+    public List<CategoryDto> getCategories() {
+        return CategoryConverter.modelsToDtos(categoryDao.findAll());
     }
 
     @Override
-    public Category getCategoryById(Long id) {
+    public CategoryDto getCategoryById(Long id) {
         Optional<Category> optionalCategory = categoryDao.findById(id);
         if (optionalCategory.isPresent()) {
-            return optionalCategory.get();
+            return CategoryConverter.modelToDto(optionalCategory.get());
         }
         throw new RuntimeException("Category doesn't exist");
     }
 
     @Override
-    public Category saveCategory(Category category) {
-        return categoryDao.saveAndFlush(category);
+    public CategoryDto saveCategory(CategoryDto categoryDto) {
+        return CategoryConverter.modelToDto(categoryDao.saveAndFlush(CategoryConverter.dtoToModel(categoryDto)));
     }
 
     @Override
-    public Category updateCategory(Category category, Long categoryId) {
-        category.setId(categoryId);
-        return categoryDao.saveAndFlush(category);
+    public CategoryDto updateCategory(CategoryDto categoryDto, Long categoryId) {
+        categoryDto.setId(categoryId);
+        return CategoryConverter.modelToDto(categoryDao.saveAndFlush(CategoryConverter.dtoToModel(categoryDto)));
     }
 
     @Override

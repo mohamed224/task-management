@@ -31,4 +31,11 @@ public class Category extends Auditable<String> implements Serializable {
     private Set<Task> tasks;
     @Column(name = "CAT_IS_DELETED", columnDefinition = "bit default 0")
     private boolean isDeleted;
+
+    public Category(Long id, String name, String description, boolean isDeleted) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.isDeleted = isDeleted;
+    }
 }

@@ -1,6 +1,6 @@
 package com.owntech.taskmanagement.controller;
 
-import com.owntech.taskmanagement.entities.Category;
+import com.owntech.taskmanagement.dto.CategoryDto;
 import com.owntech.taskmanagement.service.ICategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,23 +18,23 @@ public class CategoryController {
     }
 
     @PostMapping
-    public Category saveCategory(@RequestBody Category category) {
-        return categoryService.saveCategory(category);
+    public CategoryDto saveCategory(@RequestBody CategoryDto categoryDto) {
+        return categoryService.saveCategory(categoryDto);
     }
 
     @GetMapping
-    public List<Category> getCategories() {
+    public List<CategoryDto> getCategories() {
         return categoryService.getCategories();
     }
 
     @GetMapping("/{id}")
-    public Category getCategoryById(@PathVariable Long id) {
+    public CategoryDto getCategoryById(@PathVariable Long id) {
         return categoryService.getCategoryById(id);
     }
 
     @PutMapping("/{id}")
-    public Category updateCategory(@PathVariable Long id, @RequestBody Category category) {
-        return categoryService.updateCategory(category, id);
+    public CategoryDto updateCategory(@PathVariable Long id, @RequestBody CategoryDto categoryDto) {
+        return categoryService.updateCategory(categoryDto, id);
     }
 
     @DeleteMapping("/{id}")

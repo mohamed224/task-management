@@ -1,12 +1,14 @@
 package com.owntech.taskmanagement.controller;
 
-import com.owntech.taskmanagement.entities.User;
+import com.owntech.taskmanagement.dto.UserDto;
 import com.owntech.taskmanagement.service.IUserService;
 import com.owntech.taskmanagement.service.impl.JwtTokenUtil;
 import com.owntech.taskmanagement.service.impl.JwtUserDetailsService;
 import com.owntech.taskmanagement.util.AuthenticationRequest;
 import com.owntech.taskmanagement.util.AuthenticationResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -42,27 +44,28 @@ public class UserController {
 
         final UserDetails userDetails = jwtUserDetailsService.loadUserByUsername(authenticationRequest.getUsername());
         final String jwt = jwtTokenUtil.generateToken(userDetails);
-        return new AuthenticationResponse(jwt);
+        return new AuthenticationResponse(jwt, HttpStatus.ACCEPTED);
     }
 
     @PostMapping
-    public User saveUser(@RequestBody User user) {
-        return userService.saveUser(user);
+    public UserDto saveUser(@RequestBody UserDto userDto) {
+        return userService.saveUser(userDto);
     }
 
     @GetMapping
-    public List<User> getUsers() {
+    @PreAuthorize("hasAnyAuthority('can_create_user')")
+    public List<UserDto> getUsers() {
         return userService.getUsers();
     }
 
     @GetMapping("/{id}")
-    public User getUserById(@PathVariable Long id) {
+    public UserDto getUserById(@PathVariable Long id) {
         return userService.getUserById(id);
     }
 
     @PutMapping("/{id}")
-    public User updateUser(@PathVariable Long id, @RequestBody User user) {
-        return userService.updateUser(user, id);
+    public UserDto updateUser(@PathVariable Long id, @RequestBody UserDto userDto) {
+        return userService.updateUser(userDto, id);
     }
 
     @DeleteMapping("/{id}")

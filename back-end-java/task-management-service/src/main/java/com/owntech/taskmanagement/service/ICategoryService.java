@@ -1,18 +1,18 @@
 package com.owntech.taskmanagement.service;
 
-import com.owntech.taskmanagement.entities.Category;
+import com.owntech.taskmanagement.dto.CategoryDto;
 
 import java.util.List;
 
 public interface ICategoryService {
 
-    List<Category> getCategories();
+    List<CategoryDto> getCategories();
 
-    Category getCategoryById(Long id);
+    CategoryDto getCategoryById(Long id);
 
-    Category saveCategory(Category category);
+    CategoryDto saveCategory(CategoryDto categoryDto);
 
-    Category updateCategory(Category category, Long categoryId);
+    CategoryDto updateCategory(CategoryDto categoryDto, Long categoryId);
 
     void deleteCategory(Long id);
 }

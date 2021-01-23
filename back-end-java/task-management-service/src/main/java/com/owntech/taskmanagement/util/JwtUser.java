@@ -13,13 +13,13 @@ import java.util.Collection;
 @NoArgsConstructor
 public class JwtUser implements UserDetails {
 
-    private  Long id;
-    private  String username;
-    private  String firstName;
-    private  String lastName;
-    private  String email;
-    private  String password;
-    private  Collection<? extends GrantedAuthority> authorities;
+    private Long id;
+    private String username;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String password;
+    private Collection<? extends GrantedAuthority> authorities;
 
     @Override
     public boolean isAccountNonExpired() {

@@ -1,6 +1,7 @@
 package com.owntech.taskmanagement.controller;
 
-import com.owntech.taskmanagement.entities.Task;
+import com.owntech.taskmanagement.converter.TaskConverter;
+import com.owntech.taskmanagement.dto.TaskDto;
 import com.owntech.taskmanagement.service.ITaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -19,32 +20,32 @@ public class TaskController {
     }
 
     @PostMapping
-    public Task saveTask(@RequestBody Task task) {
-        return taskService.saveTask(task);
+    public TaskDto saveTask(@RequestBody TaskDto taskDto) {
+        return taskService.saveTask(taskDto);
     }
 
     @GetMapping
-    public List<Task> getTasks() {
+    public List<TaskDto> getTasks() {
         return taskService.getTasks();
     }
 
     @GetMapping("/{id}")
-    public Task getTaskById(@PathVariable Long id) {
-        return taskService.getTaskById(id);
+    public TaskDto getTaskById(@PathVariable Long id) {
+        return TaskConverter.modelToDto(taskService.getTaskById(id));
     }
 
     @PutMapping("/{id}")
-    public Task updateTask(@RequestBody Task task, @PathVariable Long id) {
-        return taskService.updateTask(task, id);
+    public TaskDto updateTask(@RequestBody TaskDto taskDto, @PathVariable Long id) {
+        return taskService.updateTask(taskDto, id);
     }
 
     @PutMapping("/start-task/{taskId}/{userId}")
-    public Task startTask(@PathVariable Long taskId, @PathVariable Long userId) {
+    public TaskDto startTask(@PathVariable Long taskId, @PathVariable Long userId) {
         return taskService.startTask(taskId, userId);
     }
 
     @PutMapping("/complete-task/{taskId}")
-    public Task completeTask(@PathVariable Long taskId) {
+    public TaskDto completeTask(@PathVariable Long taskId) {
         return taskService.completeTask(taskId);
     }
 

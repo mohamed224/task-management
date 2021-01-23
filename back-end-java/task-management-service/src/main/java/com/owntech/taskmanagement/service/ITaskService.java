@@ -1,22 +1,23 @@
 package com.owntech.taskmanagement.service;
 
+import com.owntech.taskmanagement.dto.TaskDto;
 import com.owntech.taskmanagement.entities.Task;
 
 import java.util.List;
 
 public interface ITaskService {
 
-    List<Task> getTasks();
+    List<TaskDto> getTasks();
 
     Task getTaskById(Long id);
 
-    Task saveTask(Task task);
+    TaskDto saveTask(TaskDto taskDto);
 
-    Task updateTask(Task task, Long taskId);
+    TaskDto updateTask(TaskDto taskDto, Long taskId);
 
     void deleteTask(Long id);
 
-    Task startTask(Long taskId, Long userId);
+    TaskDto startTask(Long taskId, Long userId);
 
-    Task completeTask(Long taskId);
+    TaskDto completeTask(Long taskId);
 }

@@ -1,5 +1,6 @@
 package com.owntech.taskmanagement.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 @Getter
@@ -12,4 +13,6 @@ public class UserDto {
     private String firstName;
     private String lastName;
     private String email;
+    @JsonIgnore
+    private String password;
 }

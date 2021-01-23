@@ -1,7 +1,9 @@
 package com.owntech.taskmanagement.service.impl;
 
+import com.owntech.taskmanagement.converter.TaskConverter;
 import com.owntech.taskmanagement.dao.TaskDao;
 import com.owntech.taskmanagement.dao.UserDao;
+import com.owntech.taskmanagement.dto.TaskDto;
 import com.owntech.taskmanagement.entities.Task;
 import com.owntech.taskmanagement.entities.User;
 import com.owntech.taskmanagement.enums.Status;
@@ -25,8 +27,8 @@ public class TaskService extends GenericService<Task, Long> implements ITaskServ
     }
 
     @Override
-    public List<Task> getTasks() {
-        return taskDao.findAll();
+    public List<TaskDto> getTasks() {
+        return TaskConverter.modelsToDtos(taskDao.findAll());
     }
 
     @Override
@@ -39,14 +41,14 @@ public class TaskService extends GenericService<Task, Long> implements ITaskServ
     }
 
     @Override
-    public Task saveTask(Task task) {
-        return taskDao.save(task);
+    public TaskDto saveTask(TaskDto taskDto) {
+        return TaskConverter.modelToDto(taskDao.save(TaskConverter.dtoToModel(taskDto)));
     }
 
     @Override
-    public Task updateTask(Task task, Long taskId) {
-        task.setId(taskId);
-        return taskDao.saveAndFlush(task);
+    public TaskDto updateTask(TaskDto taskDto, Long taskId) {
+        taskDto.setId(taskId);
+        return TaskConverter.modelToDto(taskDao.saveAndFlush(TaskConverter.dtoToModel(taskDto)));
     }
 
     @Override
@@ -55,7 +57,7 @@ public class TaskService extends GenericService<Task, Long> implements ITaskServ
     }
 
     @Override
-    public Task startTask(Long taskId, Long userId) {
+    public TaskDto startTask(Long taskId, Long userId) {
         Optional<User> optionalUser = userDao.findById(userId);
         if (optionalUser.isPresent()) {
             Stream<Task> tasksOfTheCurrentUserStream = optionalUser.get().getTasks().stream();
@@ -63,7 +65,7 @@ public class TaskService extends GenericService<Task, Long> implements ITaskServ
             if (numberOfTasksStartedByTheCurrentUser < 3) {
                 Task task = getTaskById(taskId);
                 task.setStatus(Status.IN_PROGRESS);
-                return taskDao.saveAndFlush(task);
+                return TaskConverter.modelToDto(taskDao.saveAndFlush(task));
             }
             throw new RuntimeException("You cannot have more than 3 tasks in progress in the same time.");
         }
@@ -72,13 +74,13 @@ public class TaskService extends GenericService<Task, Long> implements ITaskServ
     }
 
     @Override
-    public Task completeTask(Long taskId) {
+    public TaskDto completeTask(Long taskId) {
         Optional<Task> optionalTask = taskDao.findById(taskId);
         if (optionalTask.isPresent()) {
             Task task = optionalTask.get();
             task.setStatus(Status.DONE);
             taskDao.saveAndFlush(task);
-            return task;
+            return TaskConverter.modelToDto(task);
         }
         throw new RuntimeException("Task doesn't exist");
     }

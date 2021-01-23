@@ -3,12 +3,9 @@ package com.owntech.taskmanagement.entities;
 import com.owntech.taskmanagement.audit.Auditable;
 import lombok.*;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Collection;
 import java.util.Set;
 
 @Entity
@@ -55,5 +52,13 @@ public class User extends Auditable<String> implements Serializable {
     @Column(name = "USR_IS_DELETED", columnDefinition = "bit default 0")
     private boolean isDeleted;
 
+    public User(Long id, String firstName, String lastName, String email, String password, boolean isDeleted) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.isDeleted = isDeleted;
+    }
 
 }
