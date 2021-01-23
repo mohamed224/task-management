@@ -1,6 +1,6 @@
 package com.owntech.taskmanagement.controller;
 
-import com.owntech.taskmanagement.entities.Role;
+import com.owntech.taskmanagement.dto.RoleDto;
 import com.owntech.taskmanagement.service.IRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -19,23 +19,23 @@ public class RoleController {
     }
 
     @PostMapping
-    public Role saveRole(@RequestBody Role role) {
-        return roleService.saveRole(role);
+    public RoleDto saveRole(@RequestBody RoleDto roleDto) {
+        return roleService.saveRole(roleDto);
     }
 
     @GetMapping
-    public List<Role> getRoles() {
+    public List<RoleDto> getRoles() {
         return roleService.getRoles();
     }
 
     @GetMapping("/{id}")
-    public Role getRoleById(@PathVariable Long id) {
+    public RoleDto getRoleById(@PathVariable Long id) {
         return roleService.getRoleById(id);
     }
 
     @PutMapping("/{id}")
-    public Role updateRole(@PathVariable Long id, @RequestBody Role role) {
-        return roleService.updateRole(role, id);
+    public RoleDto updateRole(@PathVariable Long id, @RequestBody RoleDto roleDto) {
+        return roleService.updateRole(roleDto, id);
     }
 
     @DeleteMapping("/{id}")

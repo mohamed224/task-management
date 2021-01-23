@@ -1,18 +1,18 @@
 package com.owntech.taskmanagement.service;
 
-import com.owntech.taskmanagement.entities.Role;
+import com.owntech.taskmanagement.dto.RoleDto;
 
 import java.util.List;
 
 public interface IRoleService {
 
-    List<Role> getRoles();
+    List<RoleDto> getRoles();
 
-    Role getRoleById(Long id);
+    RoleDto getRoleById(Long id);
 
-    Role saveRole(Role role);
+    RoleDto saveRole(RoleDto roleDto);
 
-    Role updateRole(Role role, Long roleId);
+    RoleDto updateRole(RoleDto roleDto, Long roleId);
 
     void deleteRole(Long id);
 }

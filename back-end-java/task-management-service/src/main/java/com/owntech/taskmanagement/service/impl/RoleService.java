@@ -1,6 +1,8 @@
 package com.owntech.taskmanagement.service.impl;
 
+import com.owntech.taskmanagement.converter.RoleConverter;
 import com.owntech.taskmanagement.dao.RoleDao;
+import com.owntech.taskmanagement.dto.RoleDto;
 import com.owntech.taskmanagement.entities.Role;
 import com.owntech.taskmanagement.service.IRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,28 +21,28 @@ public class RoleService extends GenericService<Role, Long> implements IRoleServ
     }
 
     @Override
-    public List<Role> getRoles() {
-        return roleDao.findAll();
+    public List<RoleDto> getRoles() {
+        return RoleConverter.modelsToDtos(roleDao.findAll());
     }
 
     @Override
-    public Role getRoleById(Long id) {
+    public RoleDto getRoleById(Long id) {
         Optional<Role> optionalRole = roleDao.findById(id);
         if (optionalRole.isPresent()) {
-            return optionalRole.get();
+            return RoleConverter.modelToDto(optionalRole.get());
         }
         throw new RuntimeException("Role doesn't exist");
     }
 
     @Override
-    public Role saveRole(Role role) {
-        return roleDao.saveAndFlush(role);
+    public RoleDto saveRole(RoleDto roleDto) {
+        return RoleConverter.modelToDto(roleDao.saveAndFlush(RoleConverter.dtoToModel(roleDto)));
     }
 
     @Override
-    public Role updateRole(Role role, Long roleId) {
-        role.setId(roleId);
-        return roleDao.saveAndFlush(role);
+    public RoleDto updateRole(RoleDto roleDto, Long roleId) {
+        roleDto.setId(roleId);
+        return RoleConverter.modelToDto(roleDao.saveAndFlush(RoleConverter.dtoToModel(roleDto)));
     }
 
     @Override
