@@ -7,6 +7,8 @@ import com.owntech.taskmanagement.dto.TaskDto;
 import com.owntech.taskmanagement.entities.Task;
 import com.owntech.taskmanagement.entities.User;
 import com.owntech.taskmanagement.enums.Status;
+import com.owntech.taskmanagement.exceptions.ApiErrors;
+import com.owntech.taskmanagement.exceptions.HttpCustomException;
 import com.owntech.taskmanagement.service.ITaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,7 +39,7 @@ public class TaskService extends GenericService<Task, Long> implements ITaskServ
         if (optionalTask.isPresent()) {
             return optionalTask.get();
         }
-        throw new RuntimeException("Task doesn't exist");
+        throw new HttpCustomException(ApiErrors.OBJECT_NOT_FOUND_STATUS_CODE, String.format(ApiErrors.OBJECT_NOT_FOUND_MESSAGE, "Task"));
     }
 
     @Override
@@ -67,9 +69,9 @@ public class TaskService extends GenericService<Task, Long> implements ITaskServ
                 task.setStatus(Status.IN_PROGRESS);
                 return TaskConverter.modelToDto(taskDao.saveAndFlush(task));
             }
-            throw new RuntimeException("You cannot have more than 3 tasks in progress in the same time.");
+            throw new HttpCustomException(ApiErrors.START_TASK_EXCEPTION_STATUS_CODE, ApiErrors.START_TASK_EXCEPTION_MESSAGE);
         }
-        throw new RuntimeException("User doesn't exist");
+        throw new HttpCustomException(ApiErrors.OBJECT_NOT_FOUND_STATUS_CODE, String.format(ApiErrors.OBJECT_NOT_FOUND_MESSAGE, "User"));
 
     }
 
@@ -82,6 +84,6 @@ public class TaskService extends GenericService<Task, Long> implements ITaskServ
             taskDao.saveAndFlush(task);
             return TaskConverter.modelToDto(task);
         }
-        throw new RuntimeException("Task doesn't exist");
+        throw new HttpCustomException(ApiErrors.OBJECT_NOT_FOUND_STATUS_CODE, String.format(ApiErrors.OBJECT_NOT_FOUND_MESSAGE, "Task"));
     }
 }

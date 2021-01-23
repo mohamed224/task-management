@@ -4,6 +4,8 @@ import com.owntech.taskmanagement.converter.RoleConverter;
 import com.owntech.taskmanagement.dao.RoleDao;
 import com.owntech.taskmanagement.dto.RoleDto;
 import com.owntech.taskmanagement.entities.Role;
+import com.owntech.taskmanagement.exceptions.ApiErrors;
+import com.owntech.taskmanagement.exceptions.HttpCustomException;
 import com.owntech.taskmanagement.service.IRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,7 +33,7 @@ public class RoleService extends GenericService<Role, Long> implements IRoleServ
         if (optionalRole.isPresent()) {
             return RoleConverter.modelToDto(optionalRole.get());
         }
-        throw new RuntimeException("Role doesn't exist");
+        throw new HttpCustomException(ApiErrors.OBJECT_NOT_FOUND_STATUS_CODE, String.format(ApiErrors.OBJECT_NOT_FOUND_MESSAGE, "Role"));
     }
 
     @Override

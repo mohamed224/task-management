@@ -4,6 +4,8 @@ import com.owntech.taskmanagement.converter.CategoryConverter;
 import com.owntech.taskmanagement.dao.CategoryDao;
 import com.owntech.taskmanagement.dto.CategoryDto;
 import com.owntech.taskmanagement.entities.Category;
+import com.owntech.taskmanagement.exceptions.ApiErrors;
+import com.owntech.taskmanagement.exceptions.HttpCustomException;
 import com.owntech.taskmanagement.service.ICategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,7 +33,7 @@ public class CategoryService extends GenericService<Category, Long> implements I
         if (optionalCategory.isPresent()) {
             return CategoryConverter.modelToDto(optionalCategory.get());
         }
-        throw new RuntimeException("Category doesn't exist");
+        throw new HttpCustomException(ApiErrors.OBJECT_NOT_FOUND_STATUS_CODE, String.format(ApiErrors.OBJECT_NOT_FOUND_MESSAGE, "Category"));
     }
 
     @Override

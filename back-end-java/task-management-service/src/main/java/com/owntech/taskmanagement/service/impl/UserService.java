@@ -4,6 +4,8 @@ import com.owntech.taskmanagement.converter.UserConverter;
 import com.owntech.taskmanagement.dao.UserDao;
 import com.owntech.taskmanagement.dto.UserDto;
 import com.owntech.taskmanagement.entities.User;
+import com.owntech.taskmanagement.exceptions.ApiErrors;
+import com.owntech.taskmanagement.exceptions.HttpCustomException;
 import com.owntech.taskmanagement.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,7 +34,7 @@ public class UserService extends GenericService<User, Long> implements IUserServ
         if (optionalUser.isPresent()) {
             return UserConverter.modelToDto(optionalUser.get());
         }
-        throw new RuntimeException("User doesn't exist");
+        throw new HttpCustomException(ApiErrors.OBJECT_NOT_FOUND_STATUS_CODE, String.format(ApiErrors.OBJECT_NOT_FOUND_MESSAGE, "User"));
     }
 
     @Override

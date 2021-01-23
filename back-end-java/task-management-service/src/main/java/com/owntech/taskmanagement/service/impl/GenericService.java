@@ -54,6 +54,8 @@ public class GenericService<T, D extends Serializable> implements IGenericServic
 
     @Override
     public void deleteInBatchSoft(Iterable<T> entities) {
+        UUID uuid = UUID.randomUUID();
+        baseDao.deleteInBatchSoft(entities,uuid);
     }
 
     @Override

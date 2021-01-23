@@ -1,6 +1,8 @@
 package com.owntech.taskmanagement.controller;
 
 import com.owntech.taskmanagement.dto.UserDto;
+import com.owntech.taskmanagement.exceptions.ApiErrors;
+import com.owntech.taskmanagement.exceptions.HttpCustomException;
 import com.owntech.taskmanagement.service.IUserService;
 import com.owntech.taskmanagement.service.impl.JwtTokenUtil;
 import com.owntech.taskmanagement.service.impl.JwtUserDetailsService;
@@ -35,11 +37,11 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public AuthenticationResponse login(@RequestBody AuthenticationRequest authenticationRequest) throws Exception {
+    public AuthenticationResponse login(@RequestBody AuthenticationRequest authenticationRequest) {
         try {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authenticationRequest.getUsername(), authenticationRequest.getPassword()));
         } catch (BadCredentialsException e) {
-            throw new Exception(e.getMessage());
+            throw new HttpCustomException(ApiErrors.BAD_CREDENTIALS_STATUS_CODE, ApiErrors.BAD_CREDENTIALS_MESSAGE);
         }
 
         final UserDetails userDetails = jwtUserDetailsService.loadUserByUsername(authenticationRequest.getUsername());

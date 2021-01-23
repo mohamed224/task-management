@@ -2,11 +2,12 @@ package com.owntech.taskmanagement.service.impl;
 
 import com.owntech.taskmanagement.dao.UserDao;
 import com.owntech.taskmanagement.entities.User;
+import com.owntech.taskmanagement.exceptions.ApiErrors;
+import com.owntech.taskmanagement.exceptions.HttpCustomException;
 import com.owntech.taskmanagement.util.JwtUserFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -23,12 +24,12 @@ public class JwtUserDetailsService implements UserDetailsService {
 
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String username) {
         Optional<User> optionalUser = userDao.findByUsername(username);
         if (optionalUser.isPresent()) {
             User user = optionalUser.get();
             return JwtUserFactory.create(user);
         }
-        throw new UsernameNotFoundException(String.format("No user found with username '%s'.", username));
+        throw new HttpCustomException(ApiErrors.OBJECT_NOT_FOUND_STATUS_CODE, String.format(ApiErrors.OBJECT_NOT_FOUND_MESSAGE, username));
     }
 }
